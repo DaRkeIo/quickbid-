@@ -1,0 +1,84 @@
+.create-auction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: #f7f8fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(80, 80, 120, 0.08);
+  padding: 2rem 1rem;
+}
+
+.create-auction-container h1,
+.create-auction-container .MuiTypography-h5 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.MuiPaper-root {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(80, 80, 120, 0.10);
+  background: #fff;
+  padding: 2rem 1.5rem;
+}
+
+.create-auction-container form {
+  width: 100%;
+}
+
+.MuiTextField-root {
+  margin-bottom: 1.2rem;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.MuiInputBase-root {
+  border-radius: 8px;
+}
+
+.MuiInputLabel-root {
+  font-weight: 500;
+  color: #555;
+}
+
+.Mui-focused .MuiInputLabel-root {
+  color: #667eea !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.15);
+}
+
+.MuiButton-root {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.MuiButton-root:hover {
+  background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+}
+
+@media (max-width: 600px) {
+  .create-auction-container {
+    padding: 1rem 0.2rem;
+  }
+  .MuiPaper-root {
+    max-width: 100%;
+    padding: 1rem;
+  }
+} 

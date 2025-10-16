@@ -1,0 +1,257 @@
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-button {
+  background: rgba(255,255,255,0.0);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  pointer-events: auto;
+  position: relative;
+}
+
+.carousel-button svg {
+  width: 32px;
+  height: 32px;
+  color: #333;
+  opacity: 0.7;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.carousel-button:hover {
+  background: rgba(102, 126, 234, 0.12);
+  color: #667eea;
+}
+
+.carousel-button:hover svg {
+  color: #667eea;
+  opacity: 1;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auction-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 340px;
+  max-width: 90vw;
+}
+
+.auction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.auction-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.auction-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.auction-card:hover .auction-image img {
+  transform: scale(1.05);
+}
+
+.auction-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+.live-badge {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 75, 43, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 75, 43, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 75, 43, 0);
+  }
+}
+
+.auction-info {
+  padding: 1.5rem;
+}
+
+.auction-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.auction-description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.auction-details {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.price, .time-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.price .value {
+  color: #667eea;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #667eea;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    margin: 1rem auto;
+  }
+
+  .carousel-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .auction-image {
+    height: 200px;
+  }
+
+  .auction-info {
+    padding: 1rem;
+  }
+
+  .auction-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .auction-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .auction-card {
+    width: 95vw;
+    min-width: 0;
+  }
+
+  .carousel-controls {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+} 

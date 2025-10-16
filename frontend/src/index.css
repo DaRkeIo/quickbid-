@@ -1,0 +1,10 @@
+@import './styles/global.css';
+@import './styles/auth.css';
+@import './styles/auction.css';
+@import './styles/dashboard.css';
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
